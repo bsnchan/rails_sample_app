@@ -1,9 +1,11 @@
 ---
 applications:
-- name: rails-sample
+- name: rails-sample-hackday2015
   memory: 256M
   instances: 1
   path: .
   command: bundle exec rake db:migrate && bundle exec rails s -p $PORT
   services:
     - rails-postgres
+  env:
+    PORT: 5000
